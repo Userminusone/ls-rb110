@@ -1,0 +1,1 @@
+The select method returns the array [1, 2, 3], because the last value that is evaluated within the do end block is the string literal 'hi', which evaluates to true because all values in ruby except false and nil are truthy. Thus, the invocation of select returns all the elements in the array because the do end block evaluates to true for every element in the array.

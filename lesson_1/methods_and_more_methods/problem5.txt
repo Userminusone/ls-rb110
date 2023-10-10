@@ -1,0 +1,1 @@
+The shift instance method in the Hash class removes the first key value pair in the hash and returns it as a new array containing the key and the value. We know this because the Ruby documentation describes this method in the Hash documentation.

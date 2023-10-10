@@ -1,0 +1,1 @@
+Array#take takes in a non-negative integer, n, and returns a new array consisting of the first n elements of its calling object. It's important to note that Array#take is non destructive, and thus doesn't modify the calling object. The Ruby docs has an entry for Array#take which explains all of this information.

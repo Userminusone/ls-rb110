@@ -1,0 +1,1 @@
+count treats the block's return value as a condition that determines whether the current element being evaluated in the block should be included in the final count or not. If the return value of the block is truthy, then the element passed into the block is included in the final count. We can determine this by checking the documentation for Enumerable#count.
