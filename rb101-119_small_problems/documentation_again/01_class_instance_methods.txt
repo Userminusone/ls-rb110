@@ -1,0 +1,1 @@
+File::path is a class method which returns the string representation of a path determined by the object which is passed into it, whereas File#path is inherited from IO#path, which is an instance method that returns a string representation of the path of its calling object.

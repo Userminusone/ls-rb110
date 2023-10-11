@@ -1,0 +1,2 @@
+https://ruby-doc.org/3.2.2/stdlibs/yaml/YAML.html
+https://ruby-doc.org/3.2.2/exts/psych/Psych.html#method-c-load_file

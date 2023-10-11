@@ -1,0 +1,1 @@
+The first statement throws a IndexError exception, the second statement outputs "beats me", and the third statement outputs 49.
