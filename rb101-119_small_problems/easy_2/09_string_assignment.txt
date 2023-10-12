@@ -1,0 +1,4 @@
+The second code snippet will print
+BOB
+BOB
+This is because, when save_name is initializes to name, name and save_name now point to the same object, so when name invokes a mutating method on itself, it modifies the object that name points to, meaning that save_name is also modified.
