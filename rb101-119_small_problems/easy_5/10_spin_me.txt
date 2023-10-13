@@ -1,0 +1,1 @@
+The returned string will be a different object to the one passed in. This is because, whenever split is invoked on a string, a completely new array is returned that has nothing to do with the original string, and even after invoking join on the resulting array, the returned string won't be the same object as the original string.

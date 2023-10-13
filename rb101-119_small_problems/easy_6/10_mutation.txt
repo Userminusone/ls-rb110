@@ -1,0 +1,10 @@
+This code will output
+Moe
+Larry
+CURLY
+SHEMP
+Harpo
+CHICO
+Groucho
+Zeppo
+This is because, in the first invocation of each on array1, we append the elements of array1 to array2, meaning that each element in array2 points to the same object as an element in array1, such that any modifications we make to elements in array1 are reflected in array2
