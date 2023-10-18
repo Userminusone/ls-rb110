@@ -1,0 +1,12 @@
+On line 1, the non destructive method each is invoked on the multidimensional array [[18, 7], [3, 12]] and the local variable my_arr is initialized to the return value of this each invocation, which is [[18, 7], [3, 12]]. 
+The initialization of my_arr also returns [[18, 7], [3, 12]], but this value isn't used. 
+Additionally, each subarray in the outer array is passed to the subsequent do..end block, which is used in the initialization of the block parameter arr.
+On line 2, the non destructive method each is invoked on the block parameter arr, although the return value of each isn't used. Each element of arr is passed to the block, which is used in the initialization of the inner block parameter num.
+On lines 3 - 5, an if statement tests if the inner block parameter num is greater than 5, and invokes puts with the value of num if that is the case. 
+Because of this,
+18
+7
+12
+will be output to the console.
+The invocation of puts returns nil, and since it is the last statement in the if statement, nil is also returned from the if statement, and since the if statement is the last expression in the inner do end block, nil is returned from the block but isn't used.
+Since the inner each statement is the last statement in the outer do end block, the block parameter arr is returned from the outer do end block, but isn't used.
