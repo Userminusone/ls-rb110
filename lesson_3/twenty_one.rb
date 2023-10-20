@@ -20,13 +20,13 @@ def total(cards)
 
   sum = 0
   values.each do |value|
-    if value == "A"
-      sum += 11
-    elsif value.to_i == 0 # J, Q, K
-      sum += 10
-    else
-      sum += value.to_i
-    end
+    sum += if value == "A"
+             11
+           elsif value.to_i == 0 # J, Q, K
+             10
+           else
+             value.to_i
+           end
   end
 
   # correct for Aces
@@ -69,6 +69,7 @@ def stay?
   end
 end
 
+puts "Welcome to Twenty-One!"
 
 loop do
   deck = SUITS.product(CARD_TYPES).shuffle
@@ -80,8 +81,9 @@ loop do
   player_bust = nil
   loop do
     puts "Dealer has: #{CARD_NAMES[dealer_cards[0][1]]} and unknown card"
-    puts "You have: #{join_and(player_cards)}"
+    puts "You have: #{join_and(player_cards)} (total: #{total(player_cards)})"
     break if stay?
+    puts "You chose to hit!"
     player_cards << deck.pop
     player_bust = busted?(player_cards)
     break if player_bust
@@ -90,8 +92,13 @@ loop do
   if player_bust
     puts "You busted, dealer won."
   else
+    puts "You stayed at #{total(player_cards)}"
+    puts "Dealer's turn:"
+
     while total(dealer_cards) < 17
+      puts "Dealer hits!"
       dealer_cards << deck.pop
+      puts "Dealer's cards are #{join_and(dealer_cards)} (total: #{total(dealer_cards)})"
     end
 
     if busted?(dealer_cards)
@@ -105,8 +112,10 @@ loop do
     end
   end
 
-  puts "Dealer cards: #{join_and(dealer_cards)}"
-  puts "Player cards: #{join_and(player_cards)}"
+  puts "Dealer cards: #{join_and(dealer_cards)} (total: #{total(dealer_cards)})"
+  puts "Player cards: #{join_and(player_cards)} (total: #{total(player_cards)})"
 
   break unless play_again?
 end
+
+puts "Thanks for playing my game!"
